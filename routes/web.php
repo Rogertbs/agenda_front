@@ -19,4 +19,6 @@ Route::get('/login', 'UserController@login');
 Route::post('/login', 'UserController@singin');
 //Auth::routes();
 
+Route::get('/pacientes', 'PacientesController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');

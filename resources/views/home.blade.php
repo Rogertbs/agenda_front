@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Bem vindo ao sistema de Agendamento Médico!
                 </div>
             </div>
         </div>
