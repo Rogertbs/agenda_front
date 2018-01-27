@@ -19,19 +19,21 @@ class UserController extends Controller
       $user = $req->all();
       $http = new Client;
 
-  			$login = $http->post(env('API_URL') . '/auth/login', [
+  			$login = $http->post(env('API_URL') . '/api/auth/login', [
           'form_params' => [
                 'email' => $user['email'],
                 'password' => $user['password'],
             ],
   			]);
 
-            $login = json_decode($login->getBody());
-            dd($login);
-            $req->session()->put(['token' => $token['access_token']]);
-            $req->session()->put(['token_type' => $token['token_type']]);
-            $req->session()->put(['token_expires' => $token['expires_in']]);
-            $req->session()->put(['user_id' => $token['user_id']]);
+            $token = json_decode($login->getBody());
+            // dd($req->session()->put(['token' => $token['access_token']]));
+            // $req->session()->put(['token' => $token['access_token']]);
+            // $req->session()->put(['token_type' => $token['token_type']]);
+            // $req->session()->put(['token_expires' => $token['expires_in']]);
+            // $req->session()->put(['user_id' => $token['user_id']]);
+
+          //  dd($req->session()->get('token'));
 
         return view('home', compact('login'));
     }

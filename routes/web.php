@@ -20,5 +20,8 @@ Route::post('/login', 'UserController@singin');
 //Auth::routes();
 
 Route::get('/pacientes', 'PacientesController@index');
+Route::get('/pacientes/show/{id}', 'PacientesController@show');
+Route::get('/pacientes/edit/{id}', 'PacientesController@edit');
+Route::put('/pacientes/update/{id}', 'PacientesController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');

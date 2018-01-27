@@ -20,3 +20,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+
+//Função para enviar o link para o Modal de Exclusão
+$(".btn-delete").on("click", function(){
+    var href = $(this).data("href");
+    var text = $(this).attr("text");
+    if($("#myModal").length > 0){
+        $("#btn-delete").attr("href",href);
+        $(".modal-body").html(text);
+
+    }
+});
