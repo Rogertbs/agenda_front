@@ -16,24 +16,25 @@ class UserController extends Controller
 
     public function singin(Request $req)
     {
-      $user = $req->all();
-      $http = new Client;
+        $user = $req->all();
+        $http = new Client;
 
-  			$login = $http->post(env('API_URL') . '/api/auth/login', [
+  		$login = $http->post(env('API_URL') . '/api/auth/login', [
           'form_params' => [
                 'email' => $user['email'],
                 'password' => $user['password'],
             ],
-  			]);
+  		]);
 
-            $token = json_decode($login->getBody());
-            // dd($req->session()->put(['token' => $token['access_token']]));
-            // $req->session()->put(['token' => $token['access_token']]);
-            // $req->session()->put(['token_type' => $token['token_type']]);
-            // $req->session()->put(['token_expires' => $token['expires_in']]);
-            // $req->session()->put(['user_id' => $token['user_id']]);
+        $token = json_decode($login->getBody(), true);
+        // \Session::put('token', $token->access_token);
+        // dd(\Session::get('token'));
+        $req->session()->put('token', $token['access_token']);
+        $req->session()->put('token_type', $token['token_type']);
+        $req->session()->put('token_expires', $token['expires_in']);
+        $req->session()->put('user_id', $token['id']);
 
-          //  dd($req->session()->get('token'));
+        //  dd($req->session()->get('token_type'));
 
         return view('home', compact('login'));
     }

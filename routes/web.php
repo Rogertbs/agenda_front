@@ -23,5 +23,13 @@ Route::get('/pacientes', 'PacientesController@index');
 Route::get('/pacientes/show/{id}', 'PacientesController@show');
 Route::get('/pacientes/edit/{id}', 'PacientesController@edit');
 Route::put('/pacientes/update/{id}', 'PacientesController@update');
+Route::delete('/pacientes/delete/{id}', 'PacientesController@delete');
+Route::get('/pacientes/novo', 'PacientesController@new');
+Route::post('/pacientes', 'PacientesController@store');
+
+Route::get('/medicos', 'MedicosController@index');
+Route::get('/medicos/show/{id}', 'MedicosController@show');
+Route::get('/medicos/edit/{id}', 'MedicosController@edit');
+Route::put('/medicos/update/{id}', 'MedicosController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');
