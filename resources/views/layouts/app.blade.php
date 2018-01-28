@@ -38,7 +38,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ '/pacientes' }}">Pacientes</a></li>
                     </ul>
-
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ '/medicos' }}">Médicos</a></li>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

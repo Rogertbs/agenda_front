@@ -32,7 +32,7 @@ class PacientesController extends Controller
 
             $pacientes = $http->get(env('API_URL') . '/api/pacientes/'.$id, [
                 'headers' => [
-                    'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
+                    'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                 ],
                 'json' => [
                     'id' => $id,
@@ -116,7 +116,7 @@ class PacientesController extends Controller
         $http = new Client;
 
         $dados = $req->all();
-      
+
         $pacientes = $http->post(env('API_URL') . '/api/pacientes', [
             'headers' => [
                 'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),

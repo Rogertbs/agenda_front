@@ -3,17 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
 
 class MedicosController extends Controller
 {
     //
-    public function index()
+    public function index(Request $req)
     {
       $http = new Client;
 
       $medicos = $http->get(env('API_URL') . '/api/medicos', [
 				'headers' => [
-					//'Authorization' => $req->session()->get('token_type') . ' ' . $req->session()->get('token'),
+					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
 				],
 			]);
 
@@ -30,9 +32,9 @@ class MedicosController extends Controller
       $id = $req->id;
 
             $medicos = $http->get(env('API_URL') . '/api/medicos/'.$id, [
-                // 'headers' => [
-                //     'Authorization' => $req->session()->get('token_type') . ' ' . $req->session()->get('token'),
-                // ],
+                'headers' => [
+                    'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
+                ],
                 'json' => [
                     'id' => $id,
                 ],
@@ -50,11 +52,8 @@ class MedicosController extends Controller
       $id = $req->id;
 
       $medicos = $http->get(env('API_URL') . '/api/medicos/'.$id, [
-          // 'headers' => [
-          //     'Authorization' => $req->session()->get('token_type') . ' ' . $req->session()->get('token'),
-          // ],
-          'json' => [
-              'id' => $id,
+          'headers' => [
+              'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           ],
       ]);
 
@@ -71,14 +70,14 @@ class MedicosController extends Controller
       $dados = $req->all();
 
       $medicos = $http->put(env('API_URL') . '/api/medicos/'.$id, [
-          // 'headers' => [
-          //     'Authorization' => $req->session()->get('token_type') . ' ' . $req->session()->get('token'),
-          // ],
+          'headers' => [
+              'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
+          ],
           'form_params' => [
                     'nome' => $dados['nome'],
                     'telefone' => $dados['telefone'],
                     'cpf' => $dados['cpf'],
-                    'crm' => $datos['crm']                  
+                    'crm' => $dados['crm']
                 ]
       ]);
 
@@ -86,5 +85,48 @@ class MedicosController extends Controller
 
       return redirect('/medicos');
 
+    }
+
+    public function new()
+    {
+      return view('medicos.store');
+    }
+
+    public function store(Request $req)
+    {
+        $http = new Client;
+
+        $dados = $req->all();
+
+        $medicos = $http->post(env('API_URL') . '/api/medicos', [
+            'headers' => [
+                'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
+            ],
+            'form_params' => [
+                      'nome' => $dados['nome'],
+                      'telefone' => $dados['telefone'],
+                      'cpf' => $dados['cpf'],
+                      'crm' => $dados['crm']
+                  ]
+        ]);
+
+        $medicos = json_decode((string) $medicos->getBody(), true);
+
+        return redirect('/medicos');
+    }
+
+    public function destroy(Request $req, $id)
+    {
+      $http = new Client;
+
+            $medicos = $http->delete(env('API_URL') . '/api/medicos/'.$id, [
+                'headers' => [
+                    'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
+                ],
+            ]);
+
+            $medicos = json_decode((string) $medicos->getBody());
+
+            return view('medicos.show', compact('medicos'));
     }
 }

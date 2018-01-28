@@ -37,7 +37,7 @@
                                             CRM
                                         </th>
                                         <th>
-                                            <a href="" type="button" class="btn btn-success">Novo Médico</a>
+                                            <a href="{{url('/medicos/novo')}}" type="button" class="btn btn-success">Novo Médico</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -58,7 +58,7 @@
                                             {{$medico->cpf}}
                                         </td>
                                         <td>
-                                            {{$medico->email}}
+                                            {{$medico->crm}}
                                         </td>
                                         <td>
 
