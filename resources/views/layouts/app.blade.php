@@ -41,6 +41,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ '/medicos' }}">Médicos</a></li>
                     </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ '/agendas' }}">Agendas</a></li>
+                    </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
