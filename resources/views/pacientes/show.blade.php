@@ -43,7 +43,7 @@
                                 </thead>
 
                                  <tbody>
-<<?php
+<?php
     $pacientes = $pacientes->result;
  ?>
                                     <tr>

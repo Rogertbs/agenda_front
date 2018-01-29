@@ -44,7 +44,8 @@
                                 <div class="box-select">
                                     <select name="id_paciente" class="form-control">
                                         <option value="" disabled selected>Selecione o Paciente</option>
-                                        @foreach($pacientes as $paciente)
+
+                                        @foreach($pacientes['result'] as $paciente)
                                         <<option value="{{$paciente['id']}}">{{$paciente['nome']}}</option>
                                         @endforeach
                                     </select>

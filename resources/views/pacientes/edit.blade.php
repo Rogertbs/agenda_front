@@ -6,7 +6,9 @@
 
         <div class="panel panel-default">
             <div class="panel-heading"><h3><b>Editar Paciente</b></h3></div>
-
+            <?php
+                $pacientes = $pacientes->result;
+             ?>
             <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">

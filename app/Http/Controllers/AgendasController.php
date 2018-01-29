@@ -15,7 +15,7 @@ class AgendasController extends Controller
 
       $http = new Client;
 
-      $agendas = $http->get(env('API_URL') . '/agendas', [
+      $agendas = $http->get(env('API_URL') . '/api/agendas', [
         'headers' => [
           'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
         ],
@@ -30,13 +30,13 @@ class AgendasController extends Controller
     {
         $http = new Client;
 
-        $medicos = $http->get(env('API_URL') . '/medicos', [
+        $medicos = $http->get(env('API_URL') . '/api/medicos', [
           'headers' => [
             'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           ],
         ]);
 
-        $pacientes = $http->get(env('API_URL') . '/pacientes', [
+        $pacientes = $http->get(env('API_URL') . '/api/pacientes', [
           'headers' => [
             'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           ],
@@ -54,7 +54,7 @@ class AgendasController extends Controller
 
         $dados = $req->all();
         // dd($dados);
-        $agendas = $http->post(env('API_URL') . '/agendas', [
+        $agendas = $http->post(env('API_URL') . '/api/agendas', [
             'headers' => [
                 'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
             ],

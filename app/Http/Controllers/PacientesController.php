@@ -13,12 +13,12 @@ class PacientesController extends Controller
       $http = new Client;
 
       try {
-      $pacientes = $http->get(env('API_URL') . '/pacientes', [
+      $pacientes = $http->get(env('API_URL') . '/api/pacientes', [
 				'headers' => [
 					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
 				],
 			]);
-        }  catch (RequestException $e){ 
+        }  catch (RequestException $e){
             switch ($e->getResponse()->getStatusCode()) {
                 case 404:
                     \Session::flash("message", 'Dados não encontrados');
@@ -49,7 +49,7 @@ class PacientesController extends Controller
 
       $id = $req->id;
             try{
-            $pacientes = $http->get(env('API_URL') . '/pacientes/'.$id, [
+            $pacientes = $http->get(env('API_URL') . '/api/pacientes/'.$id, [
                 'headers' => [
                     'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                 ],
@@ -86,7 +86,7 @@ class PacientesController extends Controller
 
       $id = $req->id;
       try{
-      $pacientes = $http->get(env('API_URL') . '/pacientes/'.$id, [
+      $pacientes = $http->get(env('API_URL') . '/api/pacientes/'.$id, [
           'headers' => [
               'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
           ],
@@ -123,7 +123,7 @@ class PacientesController extends Controller
 
       $dados = $req->all();
       try {
-      $pacientes = $http->put(env('API_URL') . '/pacientes/'.$id, [
+      $pacientes = $http->put(env('API_URL') . '/api/pacientes/'.$id, [
           'headers' => [
               'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
           ],
@@ -161,7 +161,7 @@ class PacientesController extends Controller
     {
       $http = new Client;
             try {
-                $pacientes = $http->delete(env('API_URL') . '/pacientes/'.$id, [
+                $pacientes = $http->delete(env('API_URL') . '/api/pacientes/'.$id, [
                     'headers' => [
                         'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                     ],
@@ -207,7 +207,7 @@ class PacientesController extends Controller
 
         $dados = $req->all();
         try {
-            $pacientes = $http->post(env('API_URL') . '/pacientes', [
+            $pacientes = $http->post(env('API_URL') . '/api/pacientes', [
                 'headers' => [
                     'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
                 ],
