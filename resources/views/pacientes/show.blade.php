@@ -43,7 +43,9 @@
                                 </thead>
 
                                  <tbody>
-
+<<?php
+    $pacientes = $pacientes->result;
+ ?>
                                     <tr>
                                         <td>
                                             {{$pacientes->id}}

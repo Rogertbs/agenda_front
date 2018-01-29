@@ -23,7 +23,7 @@ Route::get('/pacientes', 'PacientesController@index');
 Route::get('/pacientes/show/{id}', 'PacientesController@show');
 Route::get('/pacientes/edit/{id}', 'PacientesController@edit');
 Route::put('/pacientes/update/{id}', 'PacientesController@update');
-Route::delete('/pacientes/delete/{id}', 'PacientesController@delete');
+Route::get('/pacientes/delete/{id}', 'PacientesController@destroy');
 Route::get('/pacientes/novo', 'PacientesController@new');
 Route::post('/pacientes', 'PacientesController@store');
 
@@ -31,7 +31,7 @@ Route::get('/medicos', 'MedicosController@index');
 Route::get('/medicos/show/{id}', 'MedicosController@show');
 Route::get('/medicos/edit/{id}', 'MedicosController@edit');
 Route::put('/medicos/update/{id}', 'MedicosController@update');
-Route::delete('/medicos/delete/{id}', 'MedicosController@delete');
+Route::get('/medicos/delete/{id}', 'MedicosController@destroy');
 Route::get('/medicos/novo', 'MedicosController@new');
 Route::post('/medicos', 'MedicosController@store');
 

@@ -43,7 +43,7 @@
                                 </thead>
 
                                  <tbody>
-                                    @foreach($pacientes as $paciente)
+                                    @foreach($pacientes->result as $paciente)
                                     <tr>
                                         <td>
                                             {{$paciente->id}}
@@ -64,7 +64,7 @@
 
                                             <a href="{{ url('/pacientes/show', $paciente->id) }}" type="button" class="btn btn-primary">Visualizar</a>
                                             <a href="{{ url('/pacientes/edit', $paciente->id) }}" type="button" class="btn btn-warning">Editar</a>
-                                            <a data-href="{{ url('/paciente/delete', $paciente->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $paciente->nome }}">Excluir</a>
+                                            <a data-href="{{ url('/pacientes/delete', $paciente->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $paciente->nome }}">Excluir</a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -86,7 +86,7 @@
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-                            <a href="#" type="button" class="btn btn-danger" id="btn-delete">Excluir</a>
+                            <a href="{{ url('/pacientes/delete', $paciente->id) }}" type="button" class="btn btn-danger" id="btn-delete">Excluir</a>
                           </div>
                         </div>
                       </div>

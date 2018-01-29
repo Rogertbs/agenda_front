@@ -32,3 +32,7 @@ $(".btn-delete").on("click", function(){
 
     }
 });
+
+$(".calendario").on("click", function () {
+    $('#datetimepicker1').datetimepicker();
+});

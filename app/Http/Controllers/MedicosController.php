@@ -13,7 +13,7 @@ class MedicosController extends Controller
     {
       $http = new Client;
 
-      $medicos = $http->get(env('API_URL') . '/api/medicos', [
+      $medicos = $http->get(env('API_URL') . '/medicos', [
 				'headers' => [
 					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
 				],
@@ -31,7 +31,7 @@ class MedicosController extends Controller
 
       $id = $req->id;
 
-            $medicos = $http->get(env('API_URL') . '/api/medicos/'.$id, [
+            $medicos = $http->get(env('API_URL') . '/medicos/'.$id, [
                 'headers' => [
                     'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                 ],
@@ -51,7 +51,7 @@ class MedicosController extends Controller
 
       $id = $req->id;
 
-      $medicos = $http->get(env('API_URL') . '/api/medicos/'.$id, [
+      $medicos = $http->get(env('API_URL') . '/medicos/'.$id, [
           'headers' => [
               'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           ],
@@ -69,7 +69,7 @@ class MedicosController extends Controller
 
       $dados = $req->all();
 
-      $medicos = $http->put(env('API_URL') . '/api/medicos/'.$id, [
+      $medicos = $http->put(env('API_URL') . '/medicos/'.$id, [
           'headers' => [
               'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           ],
@@ -98,7 +98,7 @@ class MedicosController extends Controller
 
         $dados = $req->all();
 
-        $medicos = $http->post(env('API_URL') . '/api/medicos', [
+        $medicos = $http->post(env('API_URL') . '/medicos', [
             'headers' => [
                 'Authorization' => 'bearer' . ' ' . $req->session()->get('token'),
             ],
@@ -119,14 +119,20 @@ class MedicosController extends Controller
     {
       $http = new Client;
 
-            $medicos = $http->delete(env('API_URL') . '/api/medicos/'.$id, [
+            $medicos = $http->delete(env('API_URL') . '/medicos/'.$id, [
                 'headers' => [
                     'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                 ],
             ]);
 
+            $medicos = $http->get(env('API_URL') . '/medicos', [
+      				'headers' => [
+      					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
+      				],
+      			]);
+
             $medicos = json_decode((string) $medicos->getBody());
 
-            return view('medicos.show', compact('medicos'));
+            return view('medicos.index', compact('medicos'));
     }
 }
