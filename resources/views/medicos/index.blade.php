@@ -37,7 +37,7 @@
                                             CRM
                                         </th>
                                         <th>
-                                            <a href="{{url('/medicos/novo')}}" type="button" class="btn btn-success">Novo Médico</a>
+                                            <a href="{{url('/agenda/medicos/novo')}}" type="button" class="btn btn-success">Novo Médico</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -62,9 +62,9 @@
                                         </td>
                                         <td>
 
-                                            <a href="{{ url('/medicos/show', $medico->id) }}" type="button" class="btn btn-primary">Visualizar</a>
-                                            <a href="{{ url('/medicos/edit', $medico->id) }}" type="button" class="btn btn-warning">Editar</a>
-                                            <a data-href="{{ url('/medicos/delete', $medico->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $medico->nome }}">Excluir</a>
+                                            <a href="{{ url('/agenda/medicos/show', $medico->id) }}" type="button" class="btn btn-primary">Visualizar</a>
+                                            <a href="{{ url('/agenda/medicos/edit', $medico->id) }}" type="button" class="btn btn-warning">Editar</a>
+                                            <a data-href="{{ url('/agenda/medicos/delete', $medico->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $medico->nome }}">Excluir</a>
                                         </td>
                                     </tr>
                                     @endforeach

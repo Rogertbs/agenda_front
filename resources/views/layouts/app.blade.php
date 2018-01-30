@@ -36,13 +36,13 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ '/pacientes' }}">Pacientes</a></li>
+                        <li><a href="{{ '/agenda/pacientes' }}">Pacientes</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ '/medicos' }}">Médicos</a></li>
+                        <li><a href="{{ '/agenda/medicos' }}">Médicos</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ '/agendas' }}">Agendas</a></li>
+                        <li><a href="{{ '/agenda/agendas' }}">Agendas</a></li>
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

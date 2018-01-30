@@ -63,9 +63,9 @@
                                         <td>
 
 
-                                            <a href="{{ url('/medicos/edit', $medicos->id) }}" type="button" class="btn btn-warning">Editar</a>
-                                             <a href="{{ url('/medicos')}}" type="button" class="btn btn-info">Voltar</a>
-                                            <a data-href="{{ url('/medicos/delete', $medicos->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{$medicos->nome}}">Excluir</a>
+                                            <a href="{{ url('/agenda/medicos/edit', $medicos->id) }}" type="button" class="btn btn-warning">Editar</a>
+                                             <a href="{{ url('/agenda/medicos')}}" type="button" class="btn btn-info">Voltar</a>
+                                            <a data-href="{{ url('/agenda/medicos/delete', $medicos->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{$medicos->nome}}">Excluir</a>
                                         </td>
                                     </tr>
 
