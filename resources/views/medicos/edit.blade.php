@@ -10,7 +10,7 @@
             <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{url('/medicos/update',$medicos->id)}}" method="post">
+                            <form action="{{url('/agenda/medicos/update',$medicos->id)}}" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="put" />
                                 <p>
@@ -35,7 +35,7 @@
                                 <input type="text" class="form-control" name="crm" value="{{$medicos->crm}}">
                               </div>
                               <button type="submit" class="btn btn-success">Salvar</button>
-                              <a href="{{ url('/medicos')}}" type="button" class="btn btn-info">Voltar</a>
+                              <a href="{{ url('/agenda/medicos')}}" type="button" class="btn btn-info">Voltar</a>
                             </form>
 
                         </div>

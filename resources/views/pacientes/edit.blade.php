@@ -12,7 +12,7 @@
             <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form action="{{url('/pacientes/update',$pacientes->id)}}" method="post">
+                            <form action="{{url('/agenda/pacientes/update',$pacientes->id)}}" method="post">
                                 {{ csrf_field() }}
                                 <input type="hidden" name="_method" value="put" />
                                 <p>
@@ -37,7 +37,7 @@
                                 <input type="text" class="form-control" name="email" value="{{$pacientes->email}}">
                               </div>
                               <button type="submit" class="btn btn-success">Salvar</button>
-                              <a href="{{ url('/pacientes')}}" type="button" class="btn btn-info">Voltar</a>
+                              <a href="{{ url('/agenda/pacientes')}}" type="button" class="btn btn-info">Voltar</a>
                             </form>
 
                         </div>
