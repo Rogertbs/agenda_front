@@ -62,7 +62,7 @@
                                         </td>
                                         <td>
 
-                                            <a href="{{ url('/agenda/pacientes/show', $paciente->id) }}" type="button" class="btn btn-primary">Visualizar</a>
+                                            <a href="{{ url('/pacientes/show', $paciente->id) }}" type="button" class="btn btn-primary">Visualizar</a>
                                             <a href="{{ url('/agenda/pacientes/edit', $paciente->id) }}" type="button" class="btn btn-warning">Editar</a>
                                             <a data-href="{{ url('/agenda/pacientes/delete', $paciente->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $paciente->nome }}">Excluir</a>
                                         </td>
