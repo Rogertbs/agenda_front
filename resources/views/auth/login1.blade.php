@@ -11,6 +11,11 @@
                     <form class="form-horizontal" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
+                        @if(\Session::has('message'))
+                            <div class="alert alert-danger">
+                                <strong>{{\Session::get('message')}}</strong> Não foi possível fazer login.
+                            </div>
+                        @endif
                         <div class="form-group">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
