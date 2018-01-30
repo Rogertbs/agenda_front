@@ -34,7 +34,7 @@
                                             PACIENTE
                                         </th>
                                         <th>
-                                            <a href="{{url('/agenda/agendas/novo')}}" type="button" class="btn btn-success">Agendar</a>
+                                            <a href="{{url('/agendas/novo')}}" type="button" class="btn btn-success">Agendar</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -57,9 +57,9 @@
                                         </td>
                                         <td>
 
-                                            <a href="{{ url('/agenda/agendas/show', $agenda->id) }}" type="button" class="btn btn-primary">Visualizar</a>
-                                            <a href="{{ url('/agenda/agendas/edit', $agenda->id) }}" type="button" class="btn btn-warning">Editar</a>
-                                            <a data-href="{{ url('/agenda/agendas/delete', $agenda->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $agenda->data }}">Excluir</a>
+                                            <a href="{{ url('/agendas/show', $agenda->id) }}" type="button" class="btn btn-primary">Visualizar</a>
+                                            <a href="{{ url('/agendas/edit', $agenda->id) }}" type="button" class="btn btn-warning">Editar</a>
+                                            <a data-href="{{ url('/agendas/delete', $agenda->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{ $agenda->data }}">Excluir</a>
                                         </td>
                                     </tr>
                                     @endforeach

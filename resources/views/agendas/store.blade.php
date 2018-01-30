@@ -10,7 +10,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{url('/agenda/agendas')}}" method="post">
+                    <form action="{{url('/agendas')}}" method="post">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -54,7 +54,7 @@
                         </div>
 
                     <button type="submit" class="btn btn-success">Salvar</button>
-                    <a href="{{ url('/agenda/agendas')}}" type="button" class="btn btn-info">Voltar</a>
+                    <a href="{{ url('/agendas')}}" type="button" class="btn btn-info">Voltar</a>
 
                 </form>
                 </div>
