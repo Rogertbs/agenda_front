@@ -48,16 +48,16 @@
 
                                     <tr>
                                         <td>
-                                           {{ $agendas['agenda']['data'] }}
+                                          <span class="label label-primary">{{ $agendas['agenda']['data'] }}</span>
                                         </td>
                                         <td>
-                                           {{ $agendas['agenda']['hora'] }}
+                                           <span class="label label-primary">{{ $agendas['agenda']['hora'] }}</span>
                                         </td>
                                         <td>
-                                           {{ $agendas['agenda']['medicos']['nome'] }}
+                                          <b>{{ $agendas['agenda']['medicos']['nome'] }}</b>
                                         </td>
                                         <td>
-                                           {{ $agendas['agenda']['pacientes']['nome'] }}
+                                           <b>{{ $agendas['agenda']['pacientes']['nome'] }}</b>
                                         </td>
                                         <td>
 

@@ -51,19 +51,19 @@
                                     @foreach($pacientes->result as $paciente)
                                     <tr>
                                         <td>
-                                            {{$paciente->id}}
+                                            <b>{{$paciente->id}}</b>
                                         </td>
                                         <td>
-                                            {{$paciente->nome}}
+                                            <b>{{$paciente->nome}}</b>
                                         </td>
                                         <td>
-                                            {{$paciente->telefone}}
+                                            <b>{{$paciente->telefone}}</b>
                                         </td>
                                         <td>
-                                            {{$paciente->cpf}}
+                                            <b>{{$paciente->cpf}}</b>
                                         </td>
                                         <td>
-                                            {{$paciente->email}}
+                                            <b>{{$paciente->email}}</b>
                                         </td>
                                         <td>
 

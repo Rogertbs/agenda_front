@@ -51,19 +51,19 @@
 
                                     <tr>
                                         <td>
-                                            {{$medicos->id}}
+                                            <b>{{$medicos->id}}</b>
                                         </td>
                                         <td>
-                                            {{$medicos->nome}}
+                                            <b>{{$medicos->nome}}</b>
                                         </td>
                                         <td>
-                                            {{$medicos->telefone}}
+                                            <b>{{$medicos->telefone}}</b>
                                         </td>
                                         <td>
-                                            {{$medicos->cpf}}
+                                            <b>{{$medicos->cpf}}</b>
                                         </td>
                                         <td>
-                                            {{$medicos->crm}}
+                                            <b>{{$medicos->crm}}</b>
                                         </td>
                                         <td>
 

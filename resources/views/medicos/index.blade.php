@@ -51,19 +51,19 @@
                                     @foreach($medicos as $medico)
                                     <tr>
                                         <td>
-                                            {{$medico->id}}
+                                            <b>{{$medico->id}}</b>
                                         </td>
                                         <td>
-                                            {{$medico->nome}}
+                                            <b>{{$medico->nome}}</b>
                                         </td>
                                         <td>
-                                            {{$medico->telefone}}
+                                            <b>{{$medico->telefone}}</b>
                                         </td>
                                         <td>
-                                            {{$medico->cpf}}
+                                            <b>{{$medico->cpf}}</b>
                                         </td>
                                         <td>
-                                            {{$medico->crm}}
+                                            <b>{{$medico->crm}}</b>
                                         </td>
                                         <td>
 

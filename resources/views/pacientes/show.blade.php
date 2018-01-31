@@ -53,19 +53,19 @@
  ?>
                                     <tr>
                                         <td>
-                                            {{$pacientes->id}}
+                                            <b>{{$pacientes->id}}</b>
                                         </td>
                                         <td>
-                                            {{$pacientes->nome}}
+                                            <b>{{$pacientes->nome}}</b>
                                         </td>
                                         <td>
-                                            {{$pacientes->telefone}}
+                                            <b>{{$pacientes->telefone}}</b>
                                         </td>
                                         <td>
-                                            {{$pacientes->cpf}}
+                                            <b>{{$pacientes->cpf}}</b>
                                         </td>
                                         <td>
-                                            {{$pacientes->email}}
+                                            <b>{{$pacientes->email}}</b>
                                         </td>
                                         <td>
 
