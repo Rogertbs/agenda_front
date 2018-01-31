@@ -6,7 +6,7 @@
         <div class="">
             <div class="panel panel-default">
                 <div class="panel-heading"><h3><b>Agenda</b></h3></div>
-                  
+
                 <div class="panel-body">
 
         <div class="panel panel-default">
@@ -44,7 +44,7 @@
                                     <tr>
 
                                         <td>
-                                            {{$agenda->data}}
+                                          <span class="label label-primary">{{$agenda->data}}</span>
                                         </td>
                                         <td>
                                             {{$agenda->hora}}
