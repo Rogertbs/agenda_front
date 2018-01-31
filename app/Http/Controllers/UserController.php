@@ -22,7 +22,7 @@ class UserController extends Controller
         $user = $req->all();
         $http = new Client;
         try {
-      		$login = $http->post(env('API_URL') . '/auth/login', [
+      		$login = $http->post(env('API_URL') . '/api/auth/login', [
               'form_params' => [
                     'email' => $user['email'],
                     'password' => $user['password'],
