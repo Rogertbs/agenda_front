@@ -27,22 +27,19 @@
                                 <thead>
                                     <tr>
                                         <th>
-                                            ID
+                                            DATA
                                         </th>
                                         <th>
-                                            NOME
+                                            HORA
                                         </th>
                                         <th>
-                                            TELEFONE
+                                            MÉDICO
                                         </th>
                                         <th>
-                                            CPF
+                                            PACIENTE
                                         </th>
                                         <th>
-                                            CRM
-                                        </th>
-                                        <th>
-                                            <a href="" type="button" class="btn btn-success">Novo Paciente</a>
+                                            <a href="" type="button" class="btn btn-success">Agendar</a>
                                         </th>
                                     </tr>
                                 </thead>
@@ -51,26 +48,23 @@
 
                                     <tr>
                                         <td>
-                                            {{$medicos->id}}
+                                           {{ $agendas['agenda']['data'] }}
                                         </td>
                                         <td>
-                                            {{$medicos->nome}}
+                                           {{ $agendas['agenda']['hora'] }}
                                         </td>
                                         <td>
-                                            {{$medicos->telefone}}
+                                           {{ $agendas['agenda']['medicos']['nome'] }}
                                         </td>
                                         <td>
-                                            {{$medicos->cpf}}
-                                        </td>
-                                        <td>
-                                            {{$medicos->crm}}
+                                           {{ $agendas['agenda']['pacientes']['nome'] }}
                                         </td>
                                         <td>
 
 
-                                            <a href="{{ url('/medicos/edit', $medicos->id) }}" type="button" class="btn btn-warning">Editar</a>
-                                             <a href="{{ url('/medicos')}}" type="button" class="btn btn-info">Voltar</a>
-                                            <a data-href="{{ url('/medicos/delete', $medicos->id) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{$medicos->nome}}">Excluir</a>
+                                            <a href="{{ url('/agendas/edit', $agendas['agenda']['id']) }}" type="button" class="btn btn-warning">Editar</a>
+                                             <a href="{{ url('/agendas')}}" type="button" class="btn btn-info">Voltar</a>
+                                            <a data-href="{{ url('/agendas/delete', $agendas['agenda']['id']) }}" type="button" class="btn btn-danger btn-delete" data-toggle="modal" data-target="#myModal" text="{{$agendas['agenda']['data']}}">Excluir</a>
                                         </td>
                                     </tr>
 

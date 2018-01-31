@@ -5,16 +5,16 @@
 <div class="container">
 
     <div class="panel panel-default">
-        <div class="panel-heading"><h3><b>Agendar</b></h3></div>
+        <div class="panel-heading"><h3><b>Editar Agendar</b></h3></div>
         @if(\Session::has('message'))
             <div class="alert alert-danger">
-                <strong>{{\Session::get('message')}} </strong>  Algum problema ocorreu!
+                <strong>{{\Session::get('message')}} </strong> Método não foi implementado!
             </div>
         @endif
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
-                    <form action="{{url('/agendas')}}" method="post">
+                    <form action="" method="post">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -36,9 +36,9 @@
                                 <div class="box-select">
                                     <select name="id_medico" class="form-control">
                                         <option value="" disabled selected>Selecione o Médico</option>
-                                        @foreach($medicos as $medico)
-                                        <<option value="{{$medico['id']}}">{{$medico['nome']}}</option>
-                                        @endforeach
+
+                                        <<option value="">{{ $agendas['agenda']['medicos']['nome']}}</option>
+
                                     </select>
                                 </div>
                         </div>
@@ -49,15 +49,15 @@
                                     <select name="id_paciente" class="form-control">
                                         <option value="" disabled selected>Selecione o Paciente</option>
 
-                                        @foreach($pacientes['result'] as $paciente)
-                                        <<option value="{{$paciente['id']}}">{{$paciente['nome']}}</option>
-                                        @endforeach
+
+                                        <<option value="">{{$agendas['agenda']['pacientes']['nome']}}</option>
+
                                     </select>
 
                                 </div>
                         </div>
 
-                    <button type="submit" class="btn btn-success">Salvar</button>
+                    <a type="" class="btn btn-success">Salvar</a>
                     <a href="{{ url('/agendas')}}" type="button" class="btn btn-info">Voltar</a>
 
                 </form>

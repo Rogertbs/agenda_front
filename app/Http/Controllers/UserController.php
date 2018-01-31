@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use App\User;
 
 class UserController extends Controller
 {
     //
     public function login()
     {
-      return View("auth.login1");
+
+              return View("auth.login1");
+
     }
 
     public function singin(Request $req)
@@ -41,15 +44,16 @@ class UserController extends Controller
             }
             return redirect('/login');
         }
-            if(isset($login)){
+            if(isset($login)){                
+
                 $token = json_decode($login->getBody(), true);
-                // \Session::put('token', $token->access_token);
-                // dd(\Session::get('token'));
                 $req->session()->put('token', $token['access_token']);
                 $req->session()->put('token_type', $token['token_type']);
                 $req->session()->put('token_expires', $token['expires_in']);
                 $req->session()->put('user_id', $token['id']);
                 \Session::flash('message', 'Login ok!');
+
+
                 return view('home', compact('login'));
             } else {
                 \Session::flash('message', 'Erro ao fazer logon!');

@@ -35,7 +35,7 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                @if (\Session::has('message'))
+
                     <ul class="nav navbar-nav">
                         <li><a href="{{ '/agenda/pacientes' }}">Pacientes</a></li>
                     </ul>
@@ -45,7 +45,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ '/agenda/agendas' }}">Agendas</a></li>
                     </ul>
-                @endif
+
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

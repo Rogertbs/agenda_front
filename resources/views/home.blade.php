@@ -13,7 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    @if(\Session::has('message'))
+                        <div class="alert alert-success">
+                            <strong>{{\Session::get('message')}} </strong>  Está logado.
+                        </div>
+                    @endif                    
                     Bem vindo ao sistema de Agendamento Médico!
                 </div>
             </div>

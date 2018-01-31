@@ -6,6 +6,11 @@
 
         <div class="panel panel-default">
             <div class="panel-heading"><h3><b>Editar Paciente</b></h3></div>
+            @if(\Session::has('message'))
+                <div class="alert alert-danger">
+                    <strong>{{\Session::get('message')}} </strong>  Algum problema ocorreu!
+                </div>
+            @endif
             <?php
                 $pacientes = $pacientes->result;
              ?>

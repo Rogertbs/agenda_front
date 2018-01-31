@@ -39,7 +39,7 @@ Route::get('/agendas', 'AgendasController@index');
 Route::get('/agendas/show/{id}', 'AgendasController@show');
 Route::get('/agendas/edit/{id}', 'AgendasController@edit');
 Route::put('/agendas/update/{id}', 'AgendasController@update');
-Route::delete('/agendas/delete/{id}', 'AgendasController@delete');
+Route::get('/agendas/delete/{id}', 'AgendasController@destroy');
 Route::get('/agendas/novo', 'AgendasController@new');
 Route::post('/agendas', 'AgendasController@store');
 

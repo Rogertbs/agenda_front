@@ -6,9 +6,14 @@
 
     <div class="panel panel-default">
         <div class="panel-heading"><h3><b>Cadastro de Pacientes</b></h3></div>
-
+        @if(\Session::has('message'))
+            <div class="alert alert-danger">
+                <strong>{{\Session::get('message')}} </strong>  Algum problema ocorreu!
+            </div>
+        @endif
         <div class="panel-body">
             <div class="row">
+
                 <div class="col-md-12">
                     <form action="{{url('/pacientes')}}" method="post">
                         {{ csrf_field() }}
