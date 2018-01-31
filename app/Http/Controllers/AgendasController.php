@@ -161,7 +161,7 @@ class AgendasController extends Controller
                         ],
                     ]);
 
-                    $agendas = $http->get(env('API_URL') . '/agendas', [
+                    $agendas = $http->get(env('API_URL') . '/api/agendas', [
               				'headers' => [
               					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
               				],
@@ -180,7 +180,7 @@ class AgendasController extends Controller
                         default:
                             \Session::flash("message", 'Não foi possível exibir');
                 }
-                  
+
                   return redirect('/agendas');
                 }
                 if(isset($agendas)){

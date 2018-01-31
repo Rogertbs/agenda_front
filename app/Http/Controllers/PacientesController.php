@@ -13,7 +13,7 @@ class PacientesController extends Controller
       $http = new Client;
 
       try {
-      $pacientes = $http->get(env('API_URL') . '/pacientes', [
+      $pacientes = $http->get(env('API_URL') . '/api/pacientes', [
 				'headers' => [
 					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
 				],
@@ -161,7 +161,7 @@ class PacientesController extends Controller
     {
       $http = new Client;
             try {
-                $pacientes = $http->delete(env('API_URL') . '/pacientes/'.$id, [
+                $pacientes = $http->delete(env('API_URL') . '/api/pacientes/'.$id, [
                     'headers' => [
                         'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
                     ],
