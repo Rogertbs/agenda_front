@@ -184,7 +184,7 @@ class AgendasController extends Controller
                   return redirect('/agendas');
                 }
                 if(isset($agendas)){
-                    \Session::flash("message", 'Deletado com sucesso!');
+                  
                     $agendas = json_decode((string) $agendas->getBody());
                     return view('agendas.index', compact('agendas'));
                 } else {
