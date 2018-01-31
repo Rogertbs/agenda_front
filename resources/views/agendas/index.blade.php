@@ -50,10 +50,10 @@
                                           <span class="label label-primary">{{$agenda->hora}}</span>
                                         </td>
                                         <td>
-                                            {{$agenda->medicos->nome}}
+                                            <b>{{$agenda->medicos->nome}}</b>
                                         </td>
                                         <td>
-                                            {{$agenda->pacientes->nome}}
+                                            <b>{{$agenda->pacientes->nome}}</b>
                                         </td>
                                         <td>
 
