@@ -167,7 +167,7 @@ class PacientesController extends Controller
                     ],
                 ]);
 
-                $pacientes = $http->get(env('API_URL') . '/pacientes', [
+                $pacientes = $http->get(env('API_URL') . '/api/pacientes', [
           				'headers' => [
           					'Authorization' => session()->get('token_type') . ' ' . $req->session()->get('token'),
           				],
