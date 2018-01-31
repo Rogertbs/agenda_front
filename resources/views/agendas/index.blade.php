@@ -47,13 +47,13 @@
                                           <span class="label label-primary">{{$agenda->data}}</span>
                                         </td>
                                         <td>
-                                            {{$agenda->hora}}
+                                          <span class="label label-primary">{{$agenda->hora}}</span>
                                         </td>
                                         <td>
-                                            {{$agenda->medicos->nome}}
+                                            <h5>{{$agenda->medicos->nome}}</h5>
                                         </td>
                                         <td>
-                                            {{$agenda->pacientes->nome}}
+                                            <h5>{{$agenda->pacientes->nome}}</h5>
                                         </td>
                                         <td>
 
