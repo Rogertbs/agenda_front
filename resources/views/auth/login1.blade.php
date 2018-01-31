@@ -8,7 +8,7 @@
                 <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ url('/auth/login') }}">
+                    <form class="form-horizontal" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
 
                         @if(\Session::has('message'))

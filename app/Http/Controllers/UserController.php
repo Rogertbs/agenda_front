@@ -22,7 +22,7 @@ class UserController extends Controller
         $user = $req->all();
         $http = new Client;
         try {
-      		$login = $http->post(env('API_URL') . '/api/auth/login', [
+      		$login = $http->post(env('API_URL') . '/auth/login', [
               'form_params' => [
                     'email' => $user['email'],
                     'password' => $user['password'],
@@ -44,7 +44,7 @@ class UserController extends Controller
             }
             return redirect('/login');
         }
-            if(isset($login)){                
+            if(isset($login)){
 
                 $token = json_decode($login->getBody(), true);
                 $req->session()->put('token', $token['access_token']);
